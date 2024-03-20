@@ -1,0 +1,9 @@
+div {
+  color: blue;
+}
+p {
+  color: black;
+}
+.done {
+  text-decoration: line-through;
+}

@@ -1,18 +1,30 @@
-const button1 = document.querySelector("#추가버튼");
-const input1 = document.querySelector("#입력값");
+const button = document.querySelector("#추가버튼");
+const input = document.querySelector("#입력창");
 const todos = document.querySelector("#할일들");
+const reset = document.querySelector("#초기화");
+const newTodos = [];
+button.addEventListener("click", () => {
+  const value = input.value;
 
-button1.addEventListener("click", () => {
-  const value1 = input1.value;
-  const p1 = document.createElement("p");
-  p1.innerText = value1;
-  todos.appendChild(p1);
-  input1.value = "";
-  p1.addEventListener("click", () => {
-    if (p1.className !== "done") {
-      p1.className = "done";
+  const newTodo = document.createElement("p");
+  newTodos.push(newTodo);
+
+  newTodo.innerText = value;
+  todos.appendChild(newTodo);
+
+  input.value = "";
+
+  newTodo.addEventListener("click", () => {
+    if (newTodo.className !== "done") {
+      newTodo.className = "done";
     } else {
-      p1.className = "";
+      newTodo.className = "";
     }
+  });
+
+  reset.addEventListener("click", () => {
+    newTodos.forEach((newTodo) => {
+      todos.removeChild(newTodo);
+    });
   });
 });

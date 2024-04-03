@@ -3,11 +3,14 @@
 }
 
 .parentbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
   width: 1200px;
   height: 2000px;
   background-color: rgb(11, 80, 11);
   margin: 0 auto;
-  padding-top: 250px;
 }
 
 .box {
@@ -15,10 +18,13 @@
   height: 400px;
   background-color: white;
   border: 6px solid black;
-  margin: 0 auto;
   position: relative;
+  transition: opacity 1s cubic-bezier(1, -0.02, 0.28, 1.17);
 }
 
+.box:hover {
+  opacity: 0%;
+}
 .imgimg {
   width: 400px;
 }

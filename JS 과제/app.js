@@ -1,8 +1,10 @@
-console.log("프엔 아기사자, 처음으로 JS를 건드리다!!!");
-let hi = 777;
-let age = 12;
-console.log("조건문 시작 전");
-if (age > 19) {
-  console.log("당신은 성인입니다!");
+const password = prompt("새로운 비밀번호를 입력하세요");
+if (password.length >= 6) {
+  if (password.indexOf(" ") === -1) {
+    alert("비밀번호 변경 완료!");
+  } else {
+    alert("공백이 있어요!");
+  }
+} else {
+  alert("더 길게 써주세요!");
 }
-console.log("조건문 실행 후");
